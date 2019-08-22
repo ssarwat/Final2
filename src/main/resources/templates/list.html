@@ -13,11 +13,16 @@
 
         <table>
             <tr>
+                <th>Image</th>
                 <th>Message</th>
                 <th>Date Posted</th>
                 <th>User</th>
             </tr>
             <tr th:each="message : ${messages}">
+                <td th:if="${message.picture} != null">
+                    <img th:src="${message.picture}" />
+                    <hr />
+                </td>
                 <td th:text="${message.content}"></td>
                 <td th:text="${message.postDate}"></td>
                 <td th:text="${message.sentby}"></td>
