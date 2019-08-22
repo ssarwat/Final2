@@ -24,6 +24,11 @@ public class HomeController {
         return "list";
     }
 
+    /*@RequestMapping("/")
+    public String index(){
+        return "list";
+    }*/
+
     //For the add pat for adding messages
     @GetMapping("/add")
     public String addMessages(Model model){
@@ -39,5 +44,6 @@ public class HomeController {
         messagesRepository.save(message);
         return "redirect:/";
     }
+
 
 }
