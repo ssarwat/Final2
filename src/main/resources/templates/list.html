@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Fake Twitter</title>
+</head>
+<body>
+    <a href="/add">Add a new message</a>
+    <table>
+        <tr>
+            <th>Message</th>
+            <th>Date Posted</th>
+            <th>User</th>
+        </tr>
+        <tr th:each="message : ${messages}">
+            <td th:text="${message.content}"></td>
+            <td th:text="${message.postDate}"></td>
+            <td th:text="${message.sentby}"></td>
+        </tr>
+    </table>
+</body>
+</html>
