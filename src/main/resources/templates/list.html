@@ -11,7 +11,7 @@
 <div class="container-fluid">
     <div class="jumbotron">
         <a href="/add">Add a new message</a><br/>
-        <table>
+        <table class="table">
             <tr>
                 <th>Image</th>
                 <th>Message</th>
@@ -21,7 +21,7 @@
             </tr>
             <tr th:each="message : ${messages}">
                 <td th:if="${message.picture} != null">
-                    <img th:src="${message.picture}" />
+                    <img th:src="${message.picture}" style="width: 300px; height: 300px;"/>
                     <hr />
                 </td>
                 <td th:text="${message.content}"></td>
