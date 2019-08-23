@@ -17,8 +17,8 @@
                 Message: <textarea rows="2" th:field="*{content}" />
                 <span th:if="${#fields.hasErrors('content')}" th:errors="*{content}"></span><br />
 
-                Today's Date: <input type="text" th:field="*{postDate}" />
-                <span th:if="${#fields.hasErrors('content')}" th:errors="*{content}"></span><br />
+                Today's Date: <input type="date" th:field="*{postDate}" />
+                <span th:if="${#fields.hasErrors('postDate')}" th:errors="*{postDate}"></span><br />
 
                 Username: <input type="text" th:field="*{sentby}" />
                 <span th:if="${#fields.hasErrors('sentby')}" th:errors="*{sentby}"></span><br />

@@ -5,19 +5,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>Messages</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <style type="text/css">
+        body {background-color: lightpink !important;}
+    </style>
 </head>
 <body>
-<h2>Twitter-like Messages</h2>
+<h2 style="font-size: 50px; font-style: initial"><b>Twitter-like Messages</b></h2>
 <div class="container-fluid">
     <div class="jumbotron">
-        <a href="/add">Add a new message</a><br/>
+        <a href="/add"><b>Add a new message</b></a><br/>
         <table class="table">
             <tr>
                 <th>Image</th>
                 <th>Message</th>
                 <th>Date Posted</th>
                 <th>User</th>
-                <td>Actions</td>
+                <td><b>Actions</b></td>
             </tr>
             <tr th:each="message : ${messages}">
                 <td th:if="${message.picture} != null">

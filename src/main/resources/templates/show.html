@@ -9,12 +9,12 @@
 <body>
 <div class="container">
     <div class="jumbotron">
-        <a href="/">Show All Messages</a><br/>
+        <a href="/"><b>Show All Messages</b></a><br/>
         Message: <span th:text="${message.content}"></span><br />
-        Date Posted: <span th:text="${message.postDate}"></span><br />
+<!--        Date Posted: <span th:text="${message.postDate}"></span><br />-->
         Username: <span th:text="${message.sentby}"></span><br/>
         Image: <div th:if="${message.picture} != null">
-                <img th:src="${message.picture}" />
+                <img th:src="${message.picture}" style="width: 350px; height: 350px;"/>
                 <hr />
     </div>
         <a th:href="@{/update/{id}(id=${message.id})}">Update</a> -

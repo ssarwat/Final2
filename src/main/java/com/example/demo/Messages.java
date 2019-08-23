@@ -1,11 +1,11 @@
 package com.example.demo;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import org.springframework.format.annotation.DateTimeFormat;
+
+import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+import java.util.Date;
 
 @Entity
 public class Messages {
@@ -19,7 +19,8 @@ public class Messages {
     private String content;
 
     @NotNull
-    private String postDate;
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    private Date postDate;
 
     @NotNull
     private String sentby;
@@ -43,13 +44,6 @@ public class Messages {
         this.content = content;
     }
 
-    public String getPostDate() {
-        return postDate;
-    }
-
-    public void setPostDate(String postDate) {
-        this.postDate = postDate;
-    }
 
     public String getSentby() {
         return sentby;
@@ -65,5 +59,13 @@ public class Messages {
 
     public void setPicture(String picture) {
         this.picture = picture;
+    }
+
+    public Date getPostDate() {
+        return postDate;
+    }
+
+    public void setPostDate(Date postDate) {
+        this.postDate = postDate;
     }
 }
