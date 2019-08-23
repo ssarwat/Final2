@@ -67,7 +67,7 @@ public class HomeController {
     }
 
     @RequestMapping("/add")
-    public String processActor(@ModelAttribute Messages message, @RequestParam("file") MultipartFile file){
+    public String processImage(@ModelAttribute Messages message, @RequestParam("file") MultipartFile file){
         if (file.isEmpty()){
             return "redirect:/";
         }

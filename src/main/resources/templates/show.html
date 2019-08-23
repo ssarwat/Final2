@@ -11,7 +11,7 @@
     <div class="jumbotron">
         <a href="/"><b>Show All Messages</b></a><br/>
         Message: <span th:text="${message.content}"></span><br />
-<!--        Date Posted: <span th:text="${message.postDate}"></span><br />-->
+        Date Posted: <span th:text="${message.postDate}"></span><br />
         Username: <span th:text="${message.sentby}"></span><br/>
         Image: <div th:if="${message.picture} != null">
                 <img th:src="${message.picture}" style="width: 350px; height: 350px;"/>
