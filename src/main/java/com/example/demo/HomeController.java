@@ -48,6 +48,24 @@ public class HomeController {
         return "redirect:/";
     }
 
+    @RequestMapping("/detail/{id}")
+    public String detailMessage(@PathVariable("id") long id, Model model){
+        model.addAttribute("message", messagesRepository.findById(id).get());
+        return "show";
+    }
+
+    @RequestMapping("/update/{id}")
+    public String updateMessage(@PathVariable("id") long id, Model model){
+        model.addAttribute("message", messagesRepository.findById(id).get());
+        return "messagepage";
+    }
+
+    @RequestMapping("/delete/{id}")
+    public String deleteMessage(@PathVariable("id") long id, Model model){
+        messagesRepository.deleteById(id);
+        return "redirect:/";
+    }
+
     @RequestMapping("/add")
     public String processActor(@ModelAttribute Messages message, @RequestParam("file") MultipartFile file){
         if (file.isEmpty()){
